@@ -1,5 +1,6 @@
 package libraries.utility;
 
+import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
 import org.springframework.util.StopWatch;
@@ -17,6 +18,7 @@ public class Common extends Utilities {
     }
 
     public static Logger log = Logger.getLogger("toLog");
+//    public static Logger log = LogManager.getLogger("toLog");
 
     /**
      * Get logInfo to console
