@@ -1,4 +1,4 @@
-package com.refrence.javacore;
+package com.reference.javacore;
 
 import java.io.FileWriter;
 import java.io.IOException;

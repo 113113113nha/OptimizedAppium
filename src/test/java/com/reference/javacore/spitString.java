@@ -1,4 +1,4 @@
-package com.refrence.javacore;
+package com.reference.javacore;
 
 public class spitString {
 

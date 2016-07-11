@@ -1,4 +1,4 @@
-package com.refrence.javacore;
+package com.reference.javacore;
 
 import java.io.IOException;
 
@@ -8,49 +8,49 @@ import org.jsoup.select.Elements;
 
 public class jSoup_parseHtml {
 
-	public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException {
 
-		// 1- Simple
-		String html = "<html><head><title>First parse</title></head><body><p>Parsed HTML into a doc.</p></body></html>";
-		Document doc = Jsoup.parse(html);
+        // 1- Simple
+        String html = "<html><head><title>First parse</title></head><body><p>Parsed HTML into a doc.</p></body></html>";
+        Document doc = Jsoup.parse(html);
 
-		Elements links = doc.select("head");
+        Elements links = doc.select("head");
 
-		// String tagW = links.outerHtml();
-		// System.out.println(tagW);
-		System.out.println(links.outerHtml());
+        // String tagW = links.outerHtml();
+        // System.out.println(tagW);
+        System.out.println(links.outerHtml());
 
-		// 2- Complex
-		String html2 = "<p>An <a href='http://example.com/'><b>example</b></a> link.</p>";
-		Document doc2 = Jsoup.parse(html2);
-		
-		Elements link = doc2.select("a");
+        // 2- Complex
+        String html2 = "<p>An <a href='http://example.com/'><b>example</b></a> link.</p>";
+        Document doc2 = Jsoup.parse(html2);
 
-		String text = doc2.body().text(); // "An example link"
-		String linkHref = link.attr("href"); // "http://example.com/"
-		String linkText = link.text(); // "example""
-		String linkOuterH = link.outerHtml(); // "<a href="http://example.com"><b>example</b></a>"
-		String linkInnerH = link.html(); // "<b>example</b>"
-		
-		System.out.println("Text: " + text);
-		System.out.print("linkHref: " + linkHref);
-		System.out.print("linkText: " + linkText);
-		System.out.print("linkOuterH" + linkOuterH);
-		System.out.print("linkInnerH" + linkInnerH);
+        Elements link = doc2.select("a");
 
-		// 3- Connect
-		// Document doc_Trial = Jsoup.connect("http://example.com").data("query","Java").userAgent("Mozilla").cookie("auth","token").timeout(3000).get();
-		Document doc_Trial = Jsoup.connect("http://tuoitre.vn").data("query", "Java").userAgent("Mozilla").timeout(3000)
-				.get();
-		String title = doc_Trial.outerHtml();
-		System.out.print(title);
+        String text = doc2.body().text(); // "An example link"
+        String linkHref = link.attr("href"); // "http://example.com/"
+        String linkText = link.text(); // "example""
+        String linkOuterH = link.outerHtml(); // "<a href="http://example.com"><b>example</b></a>"
+        String linkInnerH = link.html(); // "<b>example</b>"
 
-		// <div class="block-2">
-		System.out.println("------------------------ This divTag ------------------------------");
-		Elements divTag = doc2.select("div");
-		System.out.print(divTag.outerHtml());
+        System.out.println("Text: " + text);
+        System.out.print("linkHref: " + linkHref);
+        System.out.print("linkText: " + linkText);
+        System.out.print("linkOuterH" + linkOuterH);
+        System.out.print("linkInnerH" + linkInnerH);
 
-	}
+        // 3- Connect
+        // Document doc_Trial = Jsoup.connect("http://example.com").data("query","Java").userAgent("Mozilla").cookie("auth","token").timeout(3000).get();
+        Document doc_Trial = Jsoup.connect("http://tuoitre.vn").data("query", "Java").userAgent("Mozilla").timeout(3000)
+                .get();
+        String title = doc_Trial.outerHtml();
+        System.out.print(title);
+
+        // <div class="block-2">
+        System.out.println("------------------------ This divTag ------------------------------");
+        Elements divTag = doc2.select("div");
+        System.out.print(divTag.outerHtml());
+
+    }
 
 }
 /*
