@@ -2,6 +2,7 @@ package libraries.mobile;
 
 import io.appium.java_client.AppiumDriver;
 import libraries.utility.Common;
+import libraries.utility.Log;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -63,7 +64,7 @@ public class MobileElementFinder {
                     return wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(value)));
             }
         } catch (Exception e) {
-            Common.logDebug(String.format("!!! ERROR - Element not found with locator strategy: %s = %s", locator, value));
+            Log.debug(String.format("!!! ERROR - Element not found with locator strategy: %s = %s", locator, value));
         }
 
         return null;
@@ -117,7 +118,8 @@ public class MobileElementFinder {
                     return wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath(value)));
             }
         } catch (Exception e) {
-            Common.logDebug(String.format("!!! ERROR - Elements not found with locator strategy: %s = %s", locator, value));
+            Log.debug(String.format("!!! ERROR - Elements not found with locator strategy: %s = %s", locator, value));
+//            Common.logDebug(String.format("!!! ERROR - Elements not found with locator strategy: %s = %s", locator, value));
         }
 
         return null;

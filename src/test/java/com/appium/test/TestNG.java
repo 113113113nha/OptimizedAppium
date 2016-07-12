@@ -1,5 +1,6 @@
 package com.appium.test;
 
+import libraries.utility.Log;
 import org.testng.Assert;
 import org.testng.annotations.*;
 
@@ -20,6 +21,7 @@ public class TestNG {
     @Test//(groups = "non-function")
     public void testCase2() {
         System.out.println("This is the Test Case 2");
+        Log.info("hello log");
     }
 
     @Test//(groups = {"non-function", "function"})

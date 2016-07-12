@@ -3,6 +3,10 @@ package com.reference.javacore;
 import java.awt.AWTException;
 import java.util.concurrent.TimeUnit;
 
+import org.apache.log4j.BasicConfigurator;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
+import org.apache.log4j.PropertyConfigurator;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -11,6 +15,9 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class navigation {
+    static {
+        PropertyConfigurator.configure(System.getProperty("user.dir") + "/src/main/config/log4j.properties");
+    }
 
     public static void main(String[] args) throws AWTException, InterruptedException {
 

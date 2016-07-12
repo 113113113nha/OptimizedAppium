@@ -4,6 +4,7 @@ import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.ios.IOSDriver;
 import libraries.utility.Common;
+import libraries.utility.Log;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 import java.net.MalformedURLException;
@@ -23,7 +24,8 @@ public class AppiumDriverFactory {
                                            String androidDeviceName,
                                            String appPackage,
                                            String appActivity) {
-        Common.logDebug(String.format("Start initializing Appium driver for %s platform.", platform.toUpperCase()));
+//        Common.logDebug(String.format("Start initializing Appium driver for %s platform.", platform.toUpperCase()));
+        Log.debug(String.format("Start initializing Appium driver for %s platform.", platform.toUpperCase()));
         try {
             return buildDriver(serverUrl, platform, realDevice, iosDeviceName, iosDeviceUdid, androidDeviceName, appPackage, appActivity);
         } catch (MalformedURLException e) {
@@ -69,10 +71,9 @@ public class AppiumDriverFactory {
         }
 
         if (driver != null)
-            Common.logInfo(String.format("%s driver has been initialized successfully.", platform.toUpperCase()));
+            Log.info(String.format("%s driver has been initialized successfully.", platform.toUpperCase()));
         else
-            Common.logInfo(String.format("Initializing %s driver failed.", platform.toUpperCase()));
-
+            Log.info(String.format("Initializing %s driver failed.", platform.toUpperCase()));
         return driver;
     }
 

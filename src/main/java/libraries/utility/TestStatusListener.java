@@ -18,7 +18,7 @@ public class TestStatusListener extends TestListenerAdapter {
     }
 
     private void logTestResultToConsole(final String testStatus, final ITestResult tr) {
-        Common.logInfo(String.format("%s - Test script #%d: %s", testStatus, count++, tr.getMethod().getMethodName()));
+        Log.info(String.format("%s - Test script #%d: %s", testStatus, count++, tr.getMethod().getMethodName()));
     }
 
 }
