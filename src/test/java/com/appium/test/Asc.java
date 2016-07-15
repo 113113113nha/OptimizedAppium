@@ -63,6 +63,7 @@ public class Asc {
             }
             mergeSort(left);
             mergeSort(right);
+
             merge(left, right, inputArray);
         }
 
@@ -78,6 +79,7 @@ public class Asc {
                     arr[k++] = right[j++];
                 }
             }
+
             while (i < leftSize) {
                 arr[k++] = left[i++];
             }
